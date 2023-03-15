@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <button class="btn btn-outline-primary" id="btnProtect">Click on protected route</button>
+    <button class="btn btn-outline-primary" id="btnUnprotect">Click on unprotected route</button>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+
+     $(document).ready(function() {
+
+         $("#btnProtect").click(ajaxProtectClick);
+         $("#btnUnProtect").click(ajaxUnProtectClick);
+
+     });
+
+     function ajaxProtectClick() {
+         debugger;
+         //console.log(Request.Cookies["jwt"]);
+         $.ajax({
+             url:"/Home/Privacy",
+             method:"GET",
+             timeout: 0,
+             headers: {
+                 "Cookie": new HttpCookie("jwt"),
+                 "Authorization": `Bearer ${new HttpCookie("jwt")}`
+             },
+             success:function(response) {
+                 debugger;
+                 console.log(response)
+             },
+             error:function(err) {
+                 debugger;
+                 location.href="https://localhost:7166/Login/UserNotFound";
+             }
+         });
+     }
+
+    function ajaxUnProtectClick() {
+
+     }
+</script>

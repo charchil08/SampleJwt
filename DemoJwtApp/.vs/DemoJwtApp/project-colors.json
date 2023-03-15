@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3b8d0d91-0fc1-4313-8f2d-078c2663e616": {
+      "ProjectGuid": "3b8d0d91-0fc1-4313-8f2d-078c2663e616",
+      "DisplayName": "DemoJwtApp",
+      "ColorIndex": 0
+    },
+    "a786b628-92a5-4100-88b3-08432154a599": {
+      "ProjectGuid": "a786b628-92a5-4100-88b3-08432154a599",
+      "DisplayName": "DemoJwtApp.Services",
+      "ColorIndex": 1
+    },
+    "b4286225-5e47-4723-9277-3f4dda1ca4e0": {
+      "ProjectGuid": "b4286225-5e47-4723-9277-3f4dda1ca4e0",
+      "DisplayName": "DemoJwtApp.Entities",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}
