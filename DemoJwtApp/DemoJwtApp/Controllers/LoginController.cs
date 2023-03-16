@@ -50,7 +50,8 @@ namespace DemoJwtApp.Controllers
             var user = AuthenticateUser(model.Username, model.Password);
             if (user == null)
             {
-                return Unauthorized("User unautorized");
+                TempData["NotificationMessage"] = "No user found";
+                return Ok();
             }
 
             // Generate a JWT token for the user
@@ -66,6 +67,7 @@ namespace DemoJwtApp.Controllers
                 SameSite = SameSiteMode.Strict
             };
             Response.Cookies.Append("jwt", token, cookieOptions);
+            TempData["NotificationMessage"] = "Success";
             return Ok(new { token });
         }
 

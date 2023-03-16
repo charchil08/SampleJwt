@@ -23,12 +23,6 @@ namespace DemoJwtApp.Services
             _secretKey = configuration.GetValue<string>("JwtSettings:SecretKey");
             //_issuer = configuration.GetValue<string>("JwtSettings:Issuer");
             _expiryMinutes = configuration.GetValue<double>("JwtSettings:ExpiryMinutes");
-
-            //_secretKey = "s+H8JEMtFlL/NYcKm0nm+TtPl/tpM55hO1CpIbKxG/8=";
-            //_issuer = configuration.GetValue<string>("JwtSettings:Issuer");
-            //_expiryMinutes = 60;
-
-
         }
 
         public string GenerateJwtToken(User user)
@@ -70,8 +64,15 @@ namespace DemoJwtApp.Services
                     ClockSkew = TimeSpan.Zero
                 };
 
-                var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
-                return claimsPrincipal;
+                //var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
+                //return claimsPrincipal;
+
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
+                if (validatedToken is not JwtSecurityToken jwtToken || !jwtToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256Signature, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    throw new SecurityTokenException("Invalid token");
+                }
+                return principal;
             }
             catch (Exception)
             {

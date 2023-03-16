@@ -1,5 +1,6 @@
 ﻿using DemoJwtApp.Models;
 using DemoJwtApp.Services.Interface;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -23,14 +24,10 @@ namespace DemoJwtApp.Controllers
             return View();
         }
 
-        [Authorize(Roles = "user")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public IActionResult Privacy()
         {
-            //if (Response.StatusCode == 401)
-            //{
-            //    return BadRequest(new { Response.Body });
-            //}
-            // Get the authenticated user from the JWT token
+            
             var claimsPrincipal = HttpContext.User;
             var userId = claimsPrincipal.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             var username = claimsPrincipal.FindFirst(ClaimTypes.Name)?.Value;

@@ -1,6 +1,7 @@
 using DemoJwtApp.Middleware;
 using DemoJwtApp.Services;
 using DemoJwtApp.Services.Interface;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -8,8 +9,11 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddScoped<IJwtService, JwtService>();
+
+builder.Services.Configure<JwtService>(builder.Configuration.GetSection("JwtSettings"));
+string _secretKey = builder.Configuration.GetValue<string>("JwtSettings:SecretKey");
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -22,10 +26,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             //ValidIssuer = Configuration["Jwt:Issuer"],
             //ValidAudience = Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("s+H8JEMtFlL/NYcKm0nm+TtPl/tpM55hO1CpIbKxG/8="))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey))
         };
     });
 
+//builder.Services.AddScoped<Microsoft.AspNetCore.Http.RequestDelegate>();
+builder.Services.AddScoped<JwtMiddleware>();
 
 builder.Services.AddAuthorization();
 
@@ -43,7 +49,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -57,7 +62,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-//app.UseMiddleware<AuthorizationMiddleware>();
+//app.UseMiddleware<JwtMiddleware>();
+
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();

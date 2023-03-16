@@ -37,16 +37,19 @@
 
     function ajaxProtectClick() {
         debugger;
-        var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)jwt\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        //var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)jwt\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         //console.log(Request.Cookies["jwt"]);
         $.ajax({
             url: "/Home/Privacy",
             method: "GET",
             timeout: 0,
-            beforeSend: function (xhr) {
-                var jwtCookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)jwt\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-                xhr.setRequestHeader("Authorization", "Bearer " + jwtCookieValue);
+            xhrFields: {
+                withCredentials : true
             },
+            //beforeSend: function (xhr) {
+            //    var jwtCookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)jwt\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+            //    xhr.setRequestHeader("Authorization", "Bearer " + jwtCookieValue);
+            //},
             success: function (response) {
                 debugger;
                 console.log(response)
