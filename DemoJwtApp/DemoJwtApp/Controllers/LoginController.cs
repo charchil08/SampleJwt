@@ -26,7 +26,15 @@ namespace DemoJwtApp.Controllers
             return View();
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Login([FromBody] LoginViewModel model)
         {
             var user = AuthenticateUser(model.Username, model.Password);
@@ -42,8 +50,9 @@ namespace DemoJwtApp.Controllers
             //Todo: add an expiry minutes
             var cookieOptions = new CookieOptions
             {
-                HttpOnly = true,
-                Expires = DateTime.UtcNow.AddMinutes(60),
+                HttpOnly = false,
+                Secure = true,
+                Expires = DateTime.UtcNow.AddMinutes(3),
                 SameSite = SameSiteMode.Strict
             };
             Response.Cookies.Append("jwt", token, cookieOptions);
@@ -54,7 +63,7 @@ namespace DemoJwtApp.Controllers
         {
             // Authenticate the user based on the username and password
             // ...
-            if(username == "charchil" && password == "Password123")
+            if (username == "charchil" && password == "Password123")
             {
                 return new User()
                 {

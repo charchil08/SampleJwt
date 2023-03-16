@@ -10,3 +10,15 @@ D:\CHARCHIL\practices\SampleJWT\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\
 D:\CHARCHIL\practices\SampleJWT\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\DemoJwtApp.Entities.dll
 D:\CHARCHIL\practices\SampleJWT\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\ref\DemoJwtApp.Entities.dll
 D:\CHARCHIL\practices\SampleJWT\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\DemoJwtApp.Entities.pdb
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\bin\Debug\net6.0\DemoJwtApp.Entities.deps.json
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\bin\Debug\net6.0\DemoJwtApp.Entities.dll
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\bin\Debug\net6.0\DemoJwtApp.Entities.pdb
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\DemoJwtApp.Entities.csproj.AssemblyReference.cache
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\DemoJwtApp.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\DemoJwtApp.Entities.AssemblyInfoInputs.cache
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\DemoJwtApp.Entities.AssemblyInfo.cs
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\DemoJwtApp.Entities.csproj.CoreCompileInputs.cache
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\DemoJwtApp.Entities.dll
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\refint\DemoJwtApp.Entities.dll
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\DemoJwtApp.Entities.pdb
+C:\itERSem8\SampleJwt\DemoJwtApp\DemoJwtApp.Entities\obj\Debug\net6.0\ref\DemoJwtApp.Entities.dll

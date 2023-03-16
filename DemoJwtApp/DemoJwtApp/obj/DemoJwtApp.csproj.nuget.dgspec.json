@@ -1,25 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp\\DemoJwtApp.csproj": {}
+    "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp\\DemoJwtApp.csproj": {}
   },
   "projects": {
-    "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj": {
+    "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj",
+        "projectUniqueName": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj",
         "projectName": "DemoJwtApp.Entities",
-        "projectPath": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj",
-        "packagesPath": "C:\\Users\\pci141\\.nuget\\packages\\",
-        "outputPath": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Entities\\obj\\",
+        "projectPath": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj",
+        "packagesPath": "C:\\Users\\ercha\\.nuget\\packages\\",
+        "outputPath": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\pci141\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ercha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -59,26 +55,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Services\\DemoJwtApp.Services.csproj": {
+    "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Services\\DemoJwtApp.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Services\\DemoJwtApp.Services.csproj",
+        "projectUniqueName": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Services\\DemoJwtApp.Services.csproj",
         "projectName": "DemoJwtApp.Services",
-        "projectPath": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Services\\DemoJwtApp.Services.csproj",
-        "packagesPath": "C:\\Users\\pci141\\.nuget\\packages\\",
-        "outputPath": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Services\\obj\\",
+        "projectPath": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Services\\DemoJwtApp.Services.csproj",
+        "packagesPath": "C:\\Users\\ercha\\.nuget\\packages\\",
+        "outputPath": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\pci141\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ercha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,8 +83,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj": {
-                "projectPath": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj"
+              "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj": {
+                "projectPath": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj"
               }
             }
           }
@@ -123,7 +114,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -132,26 +124,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp\\DemoJwtApp.csproj": {
+    "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp\\DemoJwtApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp\\DemoJwtApp.csproj",
+        "projectUniqueName": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp\\DemoJwtApp.csproj",
         "projectName": "DemoJwtApp",
-        "projectPath": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp\\DemoJwtApp.csproj",
-        "packagesPath": "C:\\Users\\pci141\\.nuget\\packages\\",
-        "outputPath": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp\\obj\\",
+        "projectPath": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp\\DemoJwtApp.csproj",
+        "packagesPath": "C:\\Users\\ercha\\.nuget\\packages\\",
+        "outputPath": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\pci141\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ercha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -165,11 +152,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj": {
-                "projectPath": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj"
+              "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj": {
+                "projectPath": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj"
               },
-              "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Services\\DemoJwtApp.Services.csproj": {
-                "projectPath": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Services\\DemoJwtApp.Services.csproj"
+              "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Services\\DemoJwtApp.Services.csproj": {
+                "projectPath": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Services\\DemoJwtApp.Services.csproj"
               }
             }
           }
@@ -207,7 +194,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -219,7 +207,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

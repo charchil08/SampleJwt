@@ -5,43 +5,55 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <button class="btn btn-outline-primary" id="btnProtect">Click on protected route</button>
-    <button class="btn btn-outline-primary" id="btnUnprotect">Click on unprotected route</button>
+    <div class="row">
+        <div class="col-4">
+            <button class="btn btn-outline-primary" id="btnProtect">Click on protected route</button>
+        </div>
+        <div class="col-4">
+            <button class="btn btn-outline-primary" id="btnUnprotect">Click on unprotected route</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center my-4">
+            <a asp-action="Login" asp-controller="Login" class="text-danger p-4 border border-2 rounded-pill">Login</a>
+        </div>
+    </div>
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script>
 
-     $(document).ready(function() {
+    $(document).ready(function () {
 
-         $("#btnProtect").click(ajaxProtectClick);
-         $("#btnUnProtect").click(ajaxUnProtectClick);
+        $("#btnProtect").click(ajaxProtectClick);
+        $("#btnUnProtect").click(ajaxUnProtectClick);
 
-     });
+    });
 
-     function ajaxProtectClick() {
-         debugger;
-         //console.log(Request.Cookies["jwt"]);
-         $.ajax({
-             url:"/Home/Privacy",
-             method:"GET",
-             timeout: 0,
-             headers: {
-                 "Cookie": new HttpCookie("jwt"),
-                 "Authorization": `Bearer ${new HttpCookie("jwt")}`
-             },
-             success:function(response) {
-                 debugger;
-                 console.log(response)
-             },
-             error:function(err) {
-                 debugger;
-                 location.href="https://localhost:7166/Login/UserNotFound";
-             }
-         });
-     }
+    function ajaxProtectClick() {
+        debugger;
+        var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)jwt\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        //console.log(Request.Cookies["jwt"]);
+        $.ajax({
+            url: "/Home/Privacy",
+            method: "GET",
+            timeout: 0,
+            beforeSend: function (xhr) {
+                var jwtCookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)jwt\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                xhr.setRequestHeader("Authorization", "Bearer " + jwtCookieValue);
+            },
+            success: function (response) {
+                debugger;
+                console.log(response)
+            },
+            error: function (err) {
+                debugger;
+                location.href = "https://localhost:7166/Login/UserNotFound";
+            }
+        });
+    }
 
     function ajaxUnProtectClick() {
 
-     }
+    }
 </script>

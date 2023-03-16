@@ -1,0 +1,73 @@
+﻿@model DemoJwtApp.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+
+<h4>LoginViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="LoginForm" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        document.getElementById("LoginForm").addEventListener("submit", function () {
+            debugger;
+            var formData = $('#LoginForm').serializeArray().reduce(function (obj, item) {
+                obj[item.name] = item.value;
+                return obj;
+            }, {});
+            $.ajax({
+                "url": "https://localhost:7166/Login/Login",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "data": JSON.stringify({
+                    "Username": "charchil",
+                    "Password": "Password123"
+                }),
+                success: function (response) {
+                    debugger;
+                    console.log(response);
+                    localStorage.setItem("jwt", response.token)
+                },
+                error: function (err) {
+                    debugger
+                    console.log(err);
+                    location.href = "https://localhost:7166/Login/Login";
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
