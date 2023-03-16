@@ -18,11 +18,6 @@ namespace DemoJwtApp.Controllers
             _configuration = configuration;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public IActionResult UserNotFound()
         {
             return View();
@@ -30,7 +25,7 @@ namespace DemoJwtApp.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult Login()
+        public IActionResult Index()
         {
             //Check weather token is already available
             var token = Request.Cookies["jwt"];
@@ -69,6 +64,24 @@ namespace DemoJwtApp.Controllers
             Response.Cookies.Append("jwt", token, cookieOptions);
             TempData["NotificationMessage"] = "Success";
             return Ok(new { token });
+        }
+
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            var token = Request.Cookies["jwt"];
+            if (token != null)
+            {
+                Response.Cookies.Delete("jwt");
+                TempData["NotificationMessage"] = "Your operation - logout was successful.";
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                TempData["NotificationMessage"] = "Your operation - not logged in";
+                return RedirectToAction("Index", "Home");
+
+            }
         }
 
         private static User? AuthenticateUser(string username, string password)

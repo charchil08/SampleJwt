@@ -24,7 +24,7 @@ namespace DemoJwtApp.Controllers
             return View();
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles ="user")]
         public IActionResult Privacy()
         {
             

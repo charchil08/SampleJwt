@@ -20,7 +20,10 @@
     </div>
     <div class="row">
         <div class="col-12 text-center my-4">
-            <a asp-action="Login" asp-controller="Login" class="text-danger p-4 border border-2 rounded-pill">Login</a>
+            <a asp-action="Index" asp-controller="Login" class="text-danger p-4 border border-2 rounded-pill">Login</a>
+        </div>
+        <div>
+            <a asp-action="Logout" asp-controller="Login" class="text-danger mx-4 p-4">Logout</a>
         </div>
     </div>
 </div>
@@ -46,10 +49,10 @@
             xhrFields: {
                 withCredentials : true
             },
-            //beforeSend: function (xhr) {
-            //    var jwtCookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)jwt\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-            //    xhr.setRequestHeader("Authorization", "Bearer " + jwtCookieValue);
-            //},
+            beforeSend: function (xhr) {
+                var jwtCookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)jwt\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                xhr.setRequestHeader("Authorization", "Bearer " + jwtCookieValue);
+            },
             success: function (response) {
                 debugger;
                 console.log(response)

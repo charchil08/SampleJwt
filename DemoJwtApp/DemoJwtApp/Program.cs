@@ -31,7 +31,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 //builder.Services.AddScoped<Microsoft.AspNetCore.Http.RequestDelegate>();
-builder.Services.AddScoped<JwtMiddleware>();
+//builder.Services.AddSingleton<JwtMiddleware>();
 
 builder.Services.AddAuthorization();
 
