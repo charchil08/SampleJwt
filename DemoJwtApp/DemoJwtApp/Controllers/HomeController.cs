@@ -11,12 +11,10 @@ namespace DemoJwtApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IJwtService _jwtService;
 
-        public HomeController(ILogger<HomeController> logger, IJwtService jwtService)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _jwtService = jwtService;
         }
 
         [AllowAnonymous]
@@ -28,10 +26,10 @@ namespace DemoJwtApp.Controllers
         [Authorize(Roles = "user")]
         public IActionResult Privacy()
         {
-            if (Response.StatusCode == 401)
-            {
-                return BadRequest(new { Response.Body });
-            }
+            //if (Response.StatusCode == 401)
+            //{
+            //    return BadRequest(new { Response.Body });
+            //}
             // Get the authenticated user from the JWT token
             var claimsPrincipal = HttpContext.User;
             var userId = claimsPrincipal.FindFirst(ClaimTypes.NameIdentifier)?.Value;

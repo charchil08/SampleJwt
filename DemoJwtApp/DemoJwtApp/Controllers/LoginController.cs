@@ -10,10 +10,12 @@ namespace DemoJwtApp.Controllers
     public class LoginController : Controller
     {
         private readonly IJwtService _jwtService;
+        private readonly IConfiguration _configuration;
 
-        public LoginController(IJwtService jwtService)
+        public LoginController(IJwtService jwtService, IConfiguration configuration)
         {
             _jwtService = jwtService;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
@@ -30,6 +32,13 @@ namespace DemoJwtApp.Controllers
         [AllowAnonymous]
         public IActionResult Login()
         {
+            //Check weather token is already available
+            var token = Request.Cookies["jwt"];
+            if (token != null)
+            {
+                TempData["NotificationMessage"] = "Your operation was successful.";
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
@@ -37,6 +46,7 @@ namespace DemoJwtApp.Controllers
         [AllowAnonymous]
         public IActionResult Login([FromBody] LoginViewModel model)
         {
+
             var user = AuthenticateUser(model.Username, model.Password);
             if (user == null)
             {
@@ -50,9 +60,9 @@ namespace DemoJwtApp.Controllers
             //Todo: add an expiry minutes
             var cookieOptions = new CookieOptions
             {
-                HttpOnly = false,
-                Secure = true,
-                Expires = DateTime.UtcNow.AddMinutes(3),
+                HttpOnly = _configuration.GetValue<bool>("RefreshToken:HttpOnly"),
+                Secure = _configuration.GetValue<bool>("RefreshToken:Secure"),
+                Expires = DateTime.UtcNow.AddMinutes(_configuration.GetValue<double>("RefreshToken:ExpiryMinutes")),
                 SameSite = SameSiteMode.Strict
             };
             Response.Cookies.Append("jwt", token, cookieOptions);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wyjSdZ2YqoisLsq5GDgo7ZR8i95EkbY+NnMQo/Ab0XrgKYQ6wMrFcUElgpOKOVxBRdm4B8IkaJJkbqtrwJoa2A==",
+  "dgSpecHash": "Tta4kOPE4yFaeayZvcvuw4+xyiwyiJW0UT4MP5geviaE7iZMz9qOqbxbA6xt7qFU1mzynWISn6WfA6OJ1YtYpQ==",
   "success": true,
-  "projectFilePath": "C:\\itERSem8\\SampleJwt\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj",
+  "projectFilePath": "D:\\CHARCHIL\\practices\\SampleJWT\\DemoJwtApp\\DemoJwtApp.Entities\\DemoJwtApp.Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

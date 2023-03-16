@@ -20,13 +20,13 @@ namespace DemoJwtApp.Services
 
         public JwtService(IConfiguration configuration)
         {
-            //_secretKey = configuration.GetValue<string>("JwtSettings:SecretKey");
+            _secretKey = configuration.GetValue<string>("JwtSettings:SecretKey");
             //_issuer = configuration.GetValue<string>("JwtSettings:Issuer");
-            //_expiryMinutes = configuration.GetValue<double>("JwtSettings:ExpiryMinutes");
+            _expiryMinutes = configuration.GetValue<double>("JwtSettings:ExpiryMinutes");
 
-            _secretKey = "s+H8JEMtFlL/NYcKm0nm+TtPl/tpM55hO1CpIbKxG/8=";
+            //_secretKey = "s+H8JEMtFlL/NYcKm0nm+TtPl/tpM55hO1CpIbKxG/8=";
             //_issuer = configuration.GetValue<string>("JwtSettings:Issuer");
-            _expiryMinutes = 60;
+            //_expiryMinutes = 60;
 
 
         }
